@@ -1,0 +1,45 @@
+.container-previaInfo{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 500px;
+  /* background-color: aqua; */
+}
+.box-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px;
+  padding: 20px;
+}
+.box-info h2{
+}
+.card-pokemon{
+  display: flex;
+  width: 95%;
+  height: 45%;
+  margin: 5px;
+  background-color: blue;
+}
+
+.card-pokemon div {
+  width: 50%;
+
+}
+
+.image-paralelogramo1{
+  width: 650px;
+  height: 100%;
+  background:url("../../../assets/thumbnail.jpg");
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+}
+.image-paralelogramo2{
+
+  width: 650px;
+  height: 100%;
+   background:url("../../../assets/thumbnail1.jpg");
+   clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+}
