@@ -11,8 +11,12 @@ body{
   font-family: 'Josefin Sans', sans-serif;
 }
 :root {
-  --colorMorado: #6523B6;
+  --colorMorado: #353f75;
   --colorLila: #D9D9D9;
   --blanco: #ffffff;
   --nagro: #000000;
+}
+.gradient{
+  background-image: linear-gradient(to right, #C33764 0%, #1D2671  51%, #C33764  100%);
+
 }

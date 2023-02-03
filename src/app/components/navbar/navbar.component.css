@@ -9,8 +9,8 @@ header {
   justify-content: space-between;
   width: 100%;
   height: 80px ;
-  background-color: var(--colorMorado);
-  padding:15px;
+  /* background-color: var(--colorMorado); */
+  background-image: linear-gradient(to right, #C33764 0%, #1D2671  51%, #C33764  100%);  padding:15px;
 }
 picture{
   display: flex;

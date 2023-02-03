@@ -1,0 +1,75 @@
+footer{
+    /* background-color: var(--colorMorado); */
+    background-image: linear-gradient(to right, #C33764 0%, #1D2671  51%, #C33764  100%);    height: 150px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family: 'Josefin Sans';
+    box-shadow: 1px 1px 2px rgb(234, 0, 255), 0 0 1em rgb(90, 90, 230), 0 0 0.2em blue;
+
+
+    
+}
+.container-copyright{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: var(--blanco);
+    font-size: 18px;
+    padding: 10px;
+    border-right: solid 2px #fff;
+}
+
+.container-copyright p{
+    padding: 10px;
+}
+.container-developer{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    border-right: solid 2px #fff;
+
+}
+.container-developer h4{
+    padding-bottom: 20px;
+}
+.container-team-developers  label{
+    font-size: 18px;
+    padding-right: 80px;
+}
+.container-team-developers img{
+    font-size: 18px;
+    padding-right: 20px;
+}
+.container-pokemonGo{
+    width: 33.3%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-pokemonGo button{
+    width: 35%;
+    height: 55%;
+    border: none;
+    border-radius: 8px;
+    margin:10px ;
+
+}
+.container-pokemonGo img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.container-pokemonGo button:hover{
+    cursor: pointer;
+    }

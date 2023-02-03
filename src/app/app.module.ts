@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PreviaCardsComponent } from './components/previa-cards/previa-cards.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PokeMemoryComponent } from './components/poke-memory/poke-memory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SliderComponent,
-    PreviaCardsComponent
+    PreviaCardsComponent,
+    FooterComponent,
+    PokeMemoryComponent
   ],
   imports: [
     BrowserModule,
