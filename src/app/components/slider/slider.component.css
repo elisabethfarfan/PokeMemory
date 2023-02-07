@@ -10,14 +10,14 @@
   padding: 0;
   width: 400%;
   height: 100%;
-  /* animation: cambioSlider 20s infinite alternate linear; */
+  animation: cambioSlider 20s infinite alternate linear;
 }
 .container-slider li{
   position: relative;
   width: 100%;
   height: 100%;
   list-style: none;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 .li-slider div{
   position: absolute;
