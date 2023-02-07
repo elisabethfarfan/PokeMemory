@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PreviaCardsComponent } from './components/previa-cards/previa-cards.component';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { HomeComponent } from './components/home/home.component';
+import { PokememoryComponent } from './components/pokememory/pokememory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SliderComponent,
-    PreviaCardsComponent
+    PreviaCardsComponent,
+    PokedexComponent,
+    HomeComponent,
+    PokememoryComponent
   ],
   imports: [
     BrowserModule,

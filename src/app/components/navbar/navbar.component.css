@@ -47,9 +47,17 @@ ul {
  li:hover {
   background-color: var(--colorLila) ;
   border-radius: 8px;
-  color: var(--colorMorado);
+  /* color: var(--colorMorado); */
   font-weight:bold;
  }
+ a {
+  text-decoration: none;
+  color: var(--blanco);
+
+ }
+  a:hover {
+    color: var(--colorMorado);
+  }
 
  /* a{
   height: 100%;
