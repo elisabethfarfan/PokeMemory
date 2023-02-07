@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokeMemoryComponent } from './components/poke-memory/poke-memory.component';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { HomeComponent } from './components/home/home.component';
+import { PokememoryComponent } from './components/pokememory/pokememory.component';
 
 const routes: Routes = [
-  { path: 'pokeMemory', component: PokeMemoryComponent }
+  {path:'', component: HomeComponent},
+  {path:'pokedex', component: PokedexComponent},
+  {path:'pokememory', component: PokememoryComponent}
 ];
 
 @NgModule({

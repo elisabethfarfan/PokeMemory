@@ -50,6 +50,14 @@ ul {
   color: var(--colorMorado);
   font-weight:bold;
  }
+ a {
+  text-decoration: none;
+  color: var(--blanco);
+
+ }
+  a:hover {
+    color: var(--colorMorado);
+  }
 
  /* a{
   height: 100%;

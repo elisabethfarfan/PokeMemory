@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PreviaCardsComponent } from './components/previa-cards/previa-cards.component';
+import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { HomeComponent } from './components/home/home.component';
+import { PokememoryComponent } from './components/pokememory/pokememory.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { PokeMemoryComponent } from './components/poke-memory/poke-memory.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { PokeMemoryComponent } from './components/poke-memory/poke-memory.compon
     NavbarComponent,
     SliderComponent,
     PreviaCardsComponent,
+    PokedexComponent,
+    HomeComponent,
+    PokememoryComponent,
     FooterComponent,
-    PokeMemoryComponent
   ],
   imports: [
     BrowserModule,
