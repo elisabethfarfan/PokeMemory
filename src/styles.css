@@ -16,16 +16,7 @@ body{
   --blanco: #ffffff;
   --nagro: #000000;
 }
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
 .gradient{
   background-image: linear-gradient(to right, #C33764 0%, #1D2671  51%, #C33764  100%);
 
 }
->>>>>>> 9f0efe8161b547cbe49af92d710f0aa2329c611b
