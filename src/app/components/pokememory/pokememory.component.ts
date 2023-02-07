@@ -16,10 +16,10 @@ interface pokemon {
 export class PokememoryComponent {
   pokeData : pokemon[] = cardsjson.items;
 
-
-
   constructor(){
     this.pokeData = [...this.pokeData,...this.pokeData];
+    this.pokeData.sort( function(){ return Math.random() - 0.5});
+    console.log(Math.random());
   }
 
 }
