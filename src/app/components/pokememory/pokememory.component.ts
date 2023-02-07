@@ -16,8 +16,10 @@ interface pokemon {
 export class PokememoryComponent {
   pokeData : pokemon[] = cardsjson.items;
 
+
+
   constructor(){
-    console.log(cardsjson.items);
+    this.pokeData = [...this.pokeData,...this.pokeData];
   }
 
 }
