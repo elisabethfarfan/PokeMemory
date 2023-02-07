@@ -3,6 +3,8 @@
   height: 500px;
   /* margin: auto; */
   overflow: hidden;
+  box-shadow: 1px 1px 2px rgb(234, 0, 255), 0 0 1em rgb(90, 90, 230), 0 0 0.2em blue;
+
 }
 
 .container-slider ul{
@@ -75,5 +77,9 @@
   cursor: pointer;
   color: var(--blanco);
   border-radius: 8px;
+  box-shadow: 1px 1px 2px rgb(234, 0, 255), 0 0 1em rgb(90, 90, 230), 0 0 0.2em blue;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+
+
 
 }
