@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
-import { of } from 'rxjs';
+import { from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+// interface Poke {
+//   name: string,
+//   url:string
+// }
 
 @Component({
   selector: 'app-pokedex',
@@ -10,25 +15,47 @@ import { map } from 'rxjs/operators';
 })
 
 
-export class PokedexComponent { 
+export class PokedexComponent {
 
-   pokemons: any =[];
+  pokemon: Array<any> = [];
+  // pokemon:Poke[] = []
 
   constructor(){
-    this.getPokemons();
+    this.getPokemon();
   }
-  
+  poke = from(this.pokemon);
 
-  getPokemons(){
+  getPokemon(){
+    // const pokemon: Array<any> =[];
 
-    axios.get(' https://pokeapi.co/api/v2/pokemon')
-    .then((e:any) => {
-      this.pokemons.push(e.data.results);
-    } 
-      )
+    const apiPokemons = "https://pokeapi.co/api/v2/pokemon/";
 
-      const squareValues = this.pokemons.map((val: any) => val.url);
-      console.log(squareValues);
-   
+     // capturar nombre del pokemon
+    axios.get(apiPokemons)
+    .then((res:any)=>{
+      this.pokemon.push(res.data.results);
+    });
+
+    console.log(this.poke);
+
+
+
+    this.poke.pipe(map(pok => {return pok.url}))
+    .subscribe(res => {console.log(res)});
+
+
+    //modificar el url final a la propiedad pokemon
+    // console.log(pokemon);
+    // const arrayPokemon = this.pokemon.map((e)=> {
+    // return e.name + "hola";
+    //       //  axios.get(e.url)
+    //   //  .then((u)=>{
+    //   //    console.log(u);
+    //   //  })
+    // });
+
+
   }
+
+
 }
