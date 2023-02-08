@@ -8,8 +8,19 @@
     justify-content: center;
     align-content: center;
 }
-.card-pokemon{
+.card-pokemon2{
+  position: absolute;
+  background-color: blue;
+  height:100%;
+  width:100% ;
+  /* display: none; */
+}
+.card-pokemon2-oculto{
+  display: none;
+}
+.card-pokemon1{
   /* background-color: aqua; */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
