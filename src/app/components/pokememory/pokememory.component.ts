@@ -15,20 +15,10 @@ interface pokemon {
 
 export class PokememoryComponent {
   pokeData : pokemon[] = cardsjson.items;
-  eventClick: boolean = false;
-  nameDiv ?: string | undefined = '';
 
-  @ViewChild('cardpokemon2') myCard!: ElementRef;
-
-
-  // voltearCard(i:number){
-  //   console.log("click",i);
-  //   this.eventClick = true;
-  //   this.nameDiv =`cardpokemon${i}`;
-  // }
-  changeCard(){
-    const div = this.myCard.nativeElement;
-    console.log(div);
+  changeCard(event:any){
+    console.log(event.srcElement);
+    this.renderer2.addClass(event.srcElement,"card-pokemon2-oculto");
   }
 
   constructor( private renderer2 : Renderer2 ){
