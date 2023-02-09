@@ -36,7 +36,7 @@ export class PokedexComponent {
       this.pokemon.push(res.data.results);
     });
 
-    console.log(this.poke);
+    console.log(this.pokemon);
 
 
 

@@ -14,11 +14,10 @@ interface pokemon {
 })
 
 export class PokememoryComponent {
+
+  
   pokeData : pokemon[] = cardsjson.items;
   eventClick: boolean = false;
-  nameDiv ?: string | undefined = '';
-
-  @ViewChild('cardpokemon2') myCard!: ElementRef;
 
 
   // voltearCard(i:number){
@@ -26,14 +25,15 @@ export class PokememoryComponent {
   //   this.eventClick = true;
   //   this.nameDiv =`cardpokemon${i}`;
   // }
-  changeCard(){
-    const div = this.myCard.nativeElement;
-    console.log(div);
-  }
+ 
 
   constructor( private renderer2 : Renderer2 ){
     this.pokeData = [...this.pokeData,...this.pokeData];
     this.pokeData.sort( function(){ return Math.random() - 0.5});
   }
 
+  changeCard(index:number){
+    console.log('volteando elemento el index', index);
+    
+  }
 }
