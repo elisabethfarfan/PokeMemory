@@ -1,6 +1,5 @@
 
 .container-cards{
-  /* background-color:yellow; */
   display:grid;
   grid-template-columns: repeat(6, 0.2fr);
     grid-gap: 10px;
@@ -8,29 +7,46 @@
     justify-content: center;
     align-content: center;
 }
-.card-pokemon2{
-  position: absolute;
-  background-color: blue;
-  height:100%;
-  width:100% ;
-  /* display: none; */
-}
-.card-pokemon2-oculto{
-  display: none;
-}
 .card-pokemon1{
-  /* background-color: aqua; */
+  background-color: aqua;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   height: 100%;
   border-radius: 10px;
   font-size: 12px;
 }
+
+.card-pokemon2{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#142688 ;
+  /* background-image:linear-gradient(to right, #C33764 0%, #1D2671  51%, #C33764  100%); */
+  height:100%;
+  width:100% ;
+  border-radius: 10px;
+}
+.card-pokemon2:hover{
+  border: 2px solid violet;
+}
+.card-pokemon2 button{
+  background: url("../../../assets/pokebola.png");
+  width: 40%;
+  height: 50%;
+}
+.card-pokemon2-oculto{
+  display: none;
+}
+.card-pokemon2-mostrar{
+  display: block;
+}
+
 .card-pokemon:hover{
   border: 1.5px solid blueviolet;
 }
