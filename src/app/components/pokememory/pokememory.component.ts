@@ -1,11 +1,11 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, Directive, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import cardsjson from '../../../../data/pokemon/pokemon.json';
-
 interface pokemon {
   id: string,
   image: string,
   bgColor: string
 }
+
 
 @Component({
   selector: 'app-pokememory',
@@ -13,21 +13,22 @@ interface pokemon {
   styleUrls: ['./pokememory.component.css']
 })
 
+
+
 export class PokememoryComponent {
   pokeData : pokemon[] = cardsjson.items;
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
+  isDisabled: boolean = false;
 
-  hiddenCard(event:any, namePokemon: string){
-    console.log(event.srcElement);
-    console.log(namePokemon);
+  compareCards(element:any, namePokemon :string){
 
     // alcenando divs seleccionados
-    this.arrayDivsCard.push(event.srcElement);
+    this.arrayDivsCard.push(element);
     console.log(this.arrayDivsCard);
 
     //añadiendo clase al div seleccionado para voltear
-    this.renderer2.addClass(event.srcElement,"card-pokemon2-oculto");
+    this.renderer2.addClass(element,"card-pokemon2-oculto");
 
     //almacenar pokemon seleccionado
     this.arrayPokemonSelect.push(namePokemon);
@@ -35,7 +36,6 @@ export class PokememoryComponent {
     if(this.arrayPokemonSelect.length === 2){
       if(this.arrayPokemonSelect[0] === this.arrayPokemonSelect[1]){
         console.log("son iguales");
-
 
         //vaciar los array de pokemon selecionados
         //nombres de pokemones
@@ -53,20 +53,30 @@ export class PokememoryComponent {
           //vaciar los array de pokemon selecionados
           this.arrayPokemonSelect = [];
           this.arrayDivsCard=[];
-          
+
+          //habilitar eventos
+          this.isDisabled= false;
+
+          console.log(this.isDisabled);
+
         }, 3000);
-
-
-
-
+        //deshabilitar eventos
+        this.isDisabled= true;
       }
-
     }
   }
 
-  hiddenImg(event:any, namePokemon: String){
-    console.log(event);
-    this.renderer2.addClass(event.srcElement.parentNode, "card-pokemon2-oculto");
+  hiddenCard(event:any, namePokemon: string){
+
+    this.compareCards(event.srcElement, namePokemon);
+  }
+
+  hiddenImg(event:any, namePokemon: string){
+    // console.log(event);
+    // this.renderer2.addClass(event.srcElement.parentNode, "card-pokemon2-oculto");
+
+    this.compareCards(event.srcElement.parentNode, namePokemon);
+
   }
 
   constructor( private renderer2 : Renderer2 ){

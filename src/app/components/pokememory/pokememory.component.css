@@ -35,7 +35,8 @@
 .card-pokemon2:hover{
   border: 2px solid violet;
 }
-.card-pokemon2 img{
+.card-pokemon2 button{
+  background: url("../../../assets/pokebola.png");
   width: 40%;
   height: 50%;
 }

@@ -3,9 +3,9 @@
   <div class="card-pokemon1" *ngFor="let card of pokeData;let i = index">
       <img src ="{{card.image}}">
       <h2>{{card.id}}</h2>
-      <div class="card-pokemon2" (click)="hiddenCard($event, card.id )">
-        <img  src="../../../assets/pokebola.png" (click)="hiddenImg($event, card.id)">
-      </div>
+      <button class="card-pokemon2" (click)="hiddenCard($event,card.id)"  [disabled]= "isDisabled">
+        <button (click)="hiddenImg($event, card.id)" [disabled]= "isDisabled"></button>
+      </button>
   </div>
 </div>
 
