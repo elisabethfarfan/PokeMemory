@@ -76,6 +76,18 @@ export class PokememoryComponent {
     // this.renderer2.addClass(event.srcElement.parentNode, "card-pokemon2-oculto");
 
     this.compareCards(event.srcElement.parentNode, namePokemon);
+  }
+
+  timer(){
+    //duracion del juego(minutos)
+    let cont = 5
+
+    for(let i = 0; i < cont; i++){
+      setTimeout(() => {
+        cont = cont -1;
+      },10000);
+      console.log(cont);
+    }
 
   }
 
@@ -85,6 +97,8 @@ export class PokememoryComponent {
 
     //metodo que barajea aleatoriamente las cartas
     this.pokeData.sort( function(){ return Math.random() - 0.5});
+
+    this.timer();
   }
 
 }
