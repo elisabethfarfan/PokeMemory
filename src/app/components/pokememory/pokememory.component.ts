@@ -20,6 +20,22 @@ export class PokememoryComponent {
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
   isDisabled: boolean = false;
+  contClickAudio: number = 0;
+  audio:any = new Audio('../../../assets/musica_fondo.mp3');
+
+  playAudio(){
+    console.log(this.contClickAudio);
+
+    if(this.contClickAudio === 0){
+      this.contClickAudio = 1;
+      console.log(this.contClickAudio);
+      this.audio.play();
+    } else{
+      console.log("pause");
+      this.audio.pause();
+      this.contClickAudio=0;
+    }
+  }
 
   compareCards(element:any, namePokemon :string){
 
@@ -82,13 +98,12 @@ export class PokememoryComponent {
     //duracion del juego(minutos)
     let cont = 5
 
-    for(let i = 0; i < cont; i++){
+    for(let i = 0; i < 120; i++){
       setTimeout(() => {
         cont = cont -1;
-      },10000);
-      console.log(cont);
+        // console.log(cont);
+      },1000);
     }
-
   }
 
   constructor( private renderer2 : Renderer2 ){

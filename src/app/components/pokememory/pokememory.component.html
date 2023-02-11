@@ -1,4 +1,12 @@
 
+<div class="container-audio">
+  <!-- <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
+  </audio> -->
+  <button (click)="playAudio()">
+    <img src="../../../assets/icono_audio.png">
+  </button>
+</div>
+
 <div class="container-cards" >
   <div class="card-pokemon1" *ngFor="let card of pokeData;let i = index">
       <img src ="{{card.image}}">
