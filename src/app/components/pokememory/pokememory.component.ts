@@ -20,8 +20,14 @@ export class PokememoryComponent {
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
   isDisabled: boolean = false;
+  //cuenta click de icono audio
   contClickAudio: number = 0;
   audio:any = new Audio('../../../assets/musica_fondo.mp3');
+
+  //timer
+  minutos :number = 2;
+  segundos: number = 59;
+
 
   playAudio(){
     console.log(this.contClickAudio);
@@ -95,15 +101,18 @@ export class PokememoryComponent {
   }
 
   timer(){
-    //duracion del juego(minutos)
-    let cont = 5
+     if(--this.segundos < 0){
+      this.segundos = 59;
 
-    for(let i = 0; i < 120; i++){
-      setTimeout(() => {
-        cont = cont -1;
-        // console.log(cont);
-      },1000);
-    }
+      if(--this.minutos < 0){
+        this.minutos=2;
+        this.segundos=59;
+
+      }
+
+
+     }
+
   }
 
   constructor( private renderer2 : Renderer2 ){
@@ -113,7 +122,8 @@ export class PokememoryComponent {
     //metodo que barajea aleatoriamente las cartas
     this.pokeData.sort( function(){ return Math.random() - 0.5});
 
-    this.timer();
+    //ejecutar el timer
+    setInterval(() => this.timer(), 1000);
   }
 
 }
