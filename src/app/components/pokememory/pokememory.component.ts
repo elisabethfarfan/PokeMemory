@@ -20,6 +20,28 @@ export class PokememoryComponent {
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
   isDisabled: boolean = false;
+  //cuenta click de icono audio
+  contClickAudio: number = 0;
+  audio:any = new Audio('../../../assets/musica_fondo.mp3');
+
+  //timer
+  minutos :number = 2;
+  segundos: number = 59;
+
+
+  playAudio(){
+    console.log(this.contClickAudio);
+
+    if(this.contClickAudio === 0){
+      this.contClickAudio = 1;
+      console.log(this.contClickAudio);
+      this.audio.play();
+    } else{
+      console.log("pause");
+      this.audio.pause();
+      this.contClickAudio=0;
+    }
+  }
 
   compareCards(element:any, namePokemon :string){
 
@@ -76,6 +98,20 @@ export class PokememoryComponent {
     // this.renderer2.addClass(event.srcElement.parentNode, "card-pokemon2-oculto");
 
     this.compareCards(event.srcElement.parentNode, namePokemon);
+  }
+
+  timer(){
+     if(--this.segundos < 0){
+      this.segundos = 59;
+
+      if(--this.minutos < 0){
+        this.minutos=2;
+        this.segundos=59;
+
+      }
+
+
+     }
 
   }
 
@@ -85,6 +121,9 @@ export class PokememoryComponent {
 
     //metodo que barajea aleatoriamente las cartas
     this.pokeData.sort( function(){ return Math.random() - 0.5});
+
+    //ejecutar el timer
+    setInterval(() => this.timer(), 1000);
   }
 
 }
