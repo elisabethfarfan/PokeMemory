@@ -17,23 +17,16 @@ export class PokememoryComponent {
 
   
   pokeData : pokemon[] = cardsjson.items;
-  eventClick: boolean = false;
 
-
-  // voltearCard(i:number){
-  //   console.log("click",i);
-  //   this.eventClick = true;
-  //   this.nameDiv =`cardpokemon${i}`;
-  // }
- 
+  changeCard(event:any){
+    console.log(event.srcElement);
+    this.renderer2.addClass(event.  ,"card-pokemon2-oculto");
+  }
 
   constructor( private renderer2 : Renderer2 ){
     this.pokeData = [...this.pokeData,...this.pokeData];
     this.pokeData.sort( function(){ return Math.random() - 0.5});
   }
 
-  changeCard(index:number){
-    console.log('volteando elemento el index', index);
-    
-  }
+ 
 }
