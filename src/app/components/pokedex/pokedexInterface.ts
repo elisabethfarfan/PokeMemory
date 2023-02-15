@@ -1,5 +1,5 @@
 export interface Pokedex {
-    id: number;
+    id: string;
     name: string;
     img: string ;
     // generation: Object ;

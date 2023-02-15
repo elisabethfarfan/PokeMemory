@@ -1,6 +1,12 @@
 
-<ul *ngFor="let pokemon of pokemons">
-    <p>{{pokemon.id}}</p>
-    <li>{{pokemon.name}}</li>
-    <img src={{pokemon.img}}>
-</ul>
+<div class="containerCards">   
+    <div class="pokemon-group"  *ngFor="let pokemon of pokemons">
+        <div class="poke-img">
+          <p class="poke-num">{{pokemon.id}}</p>
+          <img src={{pokemon.img}}>
+        </div>
+        <div class="container-info">
+          <p class="poke-name">{{pokemon.name}}</p>
+        </div>
+    </div>
+</div>

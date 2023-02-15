@@ -16,7 +16,7 @@ export class PokedexService {
 
   public getPokemons(index:number): Observable<any>{
 
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${index}`);
+    return this.http.get(this.API_POKEMON+`${index}`);
   }
 
 

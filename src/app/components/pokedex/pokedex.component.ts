@@ -6,10 +6,6 @@ import { map } from 'rxjs/operators';
 import { PokedexService } from './pokedex.service';
 import { Pokedex } from './pokedexInterface';
 
-// interface Poke {
-//   name: string,
-//   url:string
-// }
 
 @Component({
   selector: 'app-pokedex',
@@ -27,16 +23,16 @@ export class PokedexComponent {
 
  ngOnInit(){
 
-  for (let index = 1; index < 21; index++) {
+  for (let index = 1; index < 30; index++) {
     this.pokemonServicio.getPokemons(index).subscribe((res)=> { 
             this.pokemons = [...this.pokemons, 
               {
-              id: res.id,
+              id: '00'+ res.id,
               name: res.name,
               img:res.sprites.front_default
               }
             ]
-          console.log(this.pokemons);  
+          console.log(res);  
 
     }
     
