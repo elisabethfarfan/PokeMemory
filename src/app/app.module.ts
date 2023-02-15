@@ -10,6 +10,8 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { HomeComponent } from './components/home/home.component';
 import { PokememoryComponent } from './components/pokememory/pokememory.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PokedexService } from './components/pokedex/pokedex.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,13 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    PokedexService,
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

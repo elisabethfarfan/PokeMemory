@@ -1,1 +1,6 @@
-<p>pokedex works!</p>
+
+<ul *ngFor="let pokemon of pokemons">
+    <p>{{pokemon.id}}</p>
+    <li>{{pokemon.name}}</li>
+    <img src={{pokemon.img}}>
+</ul>
