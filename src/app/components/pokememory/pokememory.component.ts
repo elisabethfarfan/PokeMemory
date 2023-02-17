@@ -28,16 +28,13 @@ export class PokememoryComponent {
   audio:any = new Audio('../../../assets/musica_fondo.mp3');
 
   //timer
-  minutos :number = 2;
+  minutos :number = 1;
   segundos: number = 59;
 
 
   public playAudio(){
-    console.log(this.contClickAudio);
-
     if(this.contClickAudio === 0){
       this.contClickAudio = 1;
-      console.log(this.contClickAudio);
       this.audio.play();
     } else{
       console.log("pause");
@@ -77,64 +74,48 @@ export class PokememoryComponent {
           //vaciar los array de pokemon selecionados
           this.arrayPokemonSelect = [];
           this.arrayDivsCard=[];
-
           //habilitar eventos
           this.isDisabled= false;
-
-          console.log(this.isDisabled);
-
-        }, 3000);
+        }, 1000);
         //deshabilitar eventos
         this.isDisabled= true;
       }
     }
   }
 
-  hiddenCard(event:any, namePokemon: string){
-
+  public hiddenCard(event:any, namePokemon: string){
     this.compareCards(event.srcElement, namePokemon);
   }
 
-  hiddenImg(event:any, namePokemon: string){
+  public  hiddenImg(event:any, namePokemon: string){
     // console.log(event);
     // this.renderer2.addClass(event.srcElement.parentNode, "card-pokemon2-oculto");
-
     this.compareCards(event.srcElement.parentNode, namePokemon);
   }
 
-  // metodo para mostrar el card de memorypoke
+  // metodo para mostrar el card de memorypoke y ejecutar el timer y play
   public hiddenCardPokemon(){
     this.isPlayMemory = true;
-    console.log( 'hi', this.isPlayMemory);    
-    // this.renderer2.addClass(event,"card-pokemon2-mostrar");
+    setInterval(() => this.timer(), 1000);  
+    // this.playAudio();
   }
 
 
-  timer(){
-     if(--this.segundos < 0){
-      this.segundos = 59;
-
-      if(--this.minutos < 0){
-        this.minutos=2;
-        this.segundos=59;
-
-      }
-
-
+  public  timer(){
+      if(--this.segundos < 0){
+        this.segundos = 59;
+        if(--this.minutos < 0){
+          this.minutos=1;
+          this.segundos=59;
+        }
      }
-
   }
 
   constructor( private renderer2 : Renderer2 ){
     // duplicar las cartas
     this.pokeData = [...this.pokeData,...this.pokeData];
-
     //metodo que barajea aleatoriamente las cartas
-    this.pokeData.sort( function(){ return Math.random() - 0.5});
-
-    //ejecutar el timer
-    setInterval(() => this.timer(), 1000);
+    this.pokeData.sort( function(){ return Math.random() - 0.5});   
   }
-
  
 }

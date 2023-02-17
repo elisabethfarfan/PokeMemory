@@ -4,21 +4,24 @@
     <button (click)="hiddenCardPokemon()" [ngStyle]="isPlayMemory ? {'display': 'none'} : {'display': 'block'}">JUGAR</button>
   </div>
   
-  <div class="container-cards"  [ngStyle]="isPlayMemory ? {'display': 'grid'} : {'display': 'none'}">
-      <!-- <div class="container-audio">
-          <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
-          </audio>
+  <div class="containerPlayGame"  [ngStyle]="isPlayMemory ? {'display': 'grid'} : {'display': 'none'}">
+      <div class="container-audio">
+          <!-- <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
+          </audio> -->
           <h2>time: {{minutos}} : {{segundos}}</h2>
           <button (click)="playAudio()">
             <img src="../../../assets/icono_audio.png">
           </button>
-      </div> -->
-    <div class="card-pokemon1" *ngFor="let card of pokeData;let i = index">
-        <img src ="{{card.image}}">
-        <h2>{{card.id}}</h2>
-        <input  type="image" src="../../../assets/poke.jpg" class="card-pokemon2" (click)="hiddenCard($event,card.id)"  [disabled]= "isDisabled">
+      </div>
+      <div class="container-cards" >
+        <div class="card-pokemon1" *ngFor="let card of pokeData;let i = index">
+          <img src ="{{card.image}}">
+          <h2>{{card.id}}</h2>
+          <input  type="image" src="../../../assets/poke.jpg" class="card-pokemon2" (click)="hiddenCard($event,card.id)"  [disabled]= "isDisabled">
+        
+      </div>
+      </div>
       
-    </div>
   </div>
 </div>
 
