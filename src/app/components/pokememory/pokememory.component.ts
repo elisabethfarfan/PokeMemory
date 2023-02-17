@@ -22,6 +22,7 @@ export class PokememoryComponent {
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
   isDisabled: boolean = false;
+  isPlayMemory: boolean = false;
   //cuenta click de icono audio
   contClickAudio: number = 0;
   audio:any = new Audio('../../../assets/musica_fondo.mp3');
@@ -31,7 +32,7 @@ export class PokememoryComponent {
   segundos: number = 59;
 
 
-  playAudio(){
+  public playAudio(){
     console.log(this.contClickAudio);
 
     if(this.contClickAudio === 0){
@@ -45,11 +46,10 @@ export class PokememoryComponent {
     }
   }
 
-  compareCards(element:any, namePokemon :string){
+  public compareCards(element:any, namePokemon :string){
 
     // alcenando divs seleccionados
     this.arrayDivsCard.push(element);
-    console.log(this.arrayDivsCard);
 
     //añadiendo clase al div seleccionado para voltear
     this.renderer2.addClass(element,"card-pokemon2-oculto");
@@ -101,6 +101,14 @@ export class PokememoryComponent {
 
     this.compareCards(event.srcElement.parentNode, namePokemon);
   }
+
+  // metodo para mostrar el card de memorypoke
+  public hiddenCardPokemon(){
+    this.isPlayMemory = true;
+    console.log( 'hi', this.isPlayMemory);    
+    // this.renderer2.addClass(event,"card-pokemon2-mostrar");
+  }
+
 
   timer(){
      if(--this.segundos < 0){

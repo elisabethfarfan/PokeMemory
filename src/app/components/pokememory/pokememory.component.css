@@ -1,3 +1,30 @@
+.containerPokeMemoryGral{
+  background-image: url('../../../assets/fondo2.png');
+  position: relative;
+}
+.button-jugar{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+}
+.button-jugar button{
+  width: 30%;
+  height: 100px;
+  background-color: #3B3486;
+  border-radius: 12px;
+  box-shadow: 3px 3px 5px #161616;
+  border: none;
+  font-size: 80px;
+  color: #F0EEED;
+  text-shadow: 3px 3px 7px #161616;
+  cursor: pointer;
+  margin-bottom: 50px;
+
+
+}
 .container-audio{
   /* background-color: aqua; */
   height: 75px;
@@ -22,13 +49,18 @@
   height: 120%;
   width: 120%;
 }
-.container-cards{
+.container-cards{ 
+  width: 100%;
+  position: absolute;
   display:grid;
   grid-template-columns: repeat(6, 0.2fr);
+  cursor: pointer;
   grid-gap: 10px;
-    padding: 30px 50px;
-    justify-content: center;
-    align-content: center;
+  padding: 30px 50px;
+  justify-content: center;
+  align-content: center;
+  top: 0;
+  
 }
 .card-pokemon1{
   background-color:  #F0EEED;

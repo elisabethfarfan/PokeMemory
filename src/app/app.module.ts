@@ -12,6 +12,7 @@ import { PokememoryComponent } from './components/pokememory/pokememory.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { PokedexService } from './components/pokedex/pokedex.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalPokedexComponent } from './components/pokedex/modal-pokedex/modal-pokedex.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     PokememoryComponent,
     FooterComponent,
+    ModalPokedexComponent,
   ],
   imports: [
     BrowserModule,
