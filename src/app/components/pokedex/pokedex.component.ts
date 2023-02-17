@@ -21,27 +21,25 @@ export class PokedexComponent {
 
  constructor(public pokemonServicio:PokedexService){}
 
- ngOnInit(){
+  ngOnInit(){
 
-  for (let index = 1; index < 30; index++) {
-    this.pokemonServicio.getPokemons(index).subscribe((res)=> { 
-            this.pokemons = [...this.pokemons, 
-              {
-              id: '00'+ res.id,
-              name: res.name,
-              img:res.sprites.front_default
-              }
-            ]
-          console.log(res);  
-
-    }
-    
-  )
+      for (let index = 1; index <= 30; index++) {
+        this.pokemonServicio.getPokemons(index).subscribe((res)=> { 
+                this.pokemons = [...this.pokemons, 
+                  {
+                  id: '00'+ res.id,
+                  name: res.name,
+                  img:res.sprites.front_default,
+                  abilities: res.abilities.map((elemen:any) => elemen.ability.name),          
+                  }            
+                ]    
+        })
+      }
   }
 
+ public getInfoPokemon(){
+  console.log('infor dle pokemon');
  }
-
-
  
 
 }

@@ -2,6 +2,7 @@ export interface Pokedex {
     id: string;
     name: string;
     img: string ;
+    abilities:string;
     // generation: Object ;
     // about: string ;
     // size: Object ;
