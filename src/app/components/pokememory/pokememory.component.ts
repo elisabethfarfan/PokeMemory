@@ -93,6 +93,15 @@ export class PokememoryComponent {
     this.compareCards(event.srcElement.parentNode, namePokemon);
   }
 
+  public  timer(){
+    if(--this.segundos < 0){
+      this.segundos = 59;
+      if(--this.minutos < 0){
+        this.minutos=1;
+        this.segundos=59;
+      }
+   }
+}
   // metodo para mostrar el card de memorypoke y ejecutar el timer y play
   public hiddenCardPokemon(){
     this.isPlayMemory = true;
@@ -101,15 +110,7 @@ export class PokememoryComponent {
   }
 
 
-  public  timer(){
-      if(--this.segundos < 0){
-        this.segundos = 59;
-        if(--this.minutos < 0){
-          this.minutos=1;
-          this.segundos=59;
-        }
-     }
-  }
+
 
   constructor( private renderer2 : Renderer2 ){
     // duplicar las cartas

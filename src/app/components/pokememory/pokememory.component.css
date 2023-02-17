@@ -58,6 +58,11 @@
   height: 120%;
   width: 120%;
 }
+.container-lose{
+  width: 30%;
+  height: 100px;
+  background-color: aqua;
+}
 .container-cards{ 
   width: 100%;
  

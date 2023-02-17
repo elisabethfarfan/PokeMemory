@@ -8,6 +8,9 @@
       <div class="container-audio">
           <!-- <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
           </audio> -->
+          <div class="container-lose" [ngStyle]="minutos ===0 && segundos ? {'color': 'red'} : {'color': 'yellow'}">
+            <p>PERDISTE!  </p>
+          </div>
           <h2>time: {{minutos}} : {{segundos}}</h2>
           <button (click)="playAudio()">
             <img src="../../../assets/icono_audio.png">
@@ -24,5 +27,6 @@
       
   </div>
 </div>
+<app-footer></app-footer>
 
 
