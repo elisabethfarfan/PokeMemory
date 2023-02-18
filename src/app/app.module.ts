@@ -14,6 +14,8 @@ import { PokedexService } from './components/pokedex/pokedex.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalPokedexComponent } from './components/pokedex/modal-pokedex/modal-pokedex.component';
 
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { ModalPokedexComponent } from './components/pokedex/modal-pokedex/modal-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    [SweetAlert2Module.forRoot()],
   ],
   providers: [
     PokedexService,

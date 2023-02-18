@@ -30,7 +30,9 @@
   height: 100vh;
   top: 0;
   position: absolute;
-
+  
+  align-items: center;
+  margin:  auto ;
 }
 .container-audio{
   /* background-color: aqua; */
@@ -59,10 +61,35 @@
   width: 120%;
 }
 .container-lose{
-  width: 30%;
-  height: 100px;
-  background-color: aqua;
+  position: absolute;
+  z-index: 10;
+  left: 23%;
+  width: 50%;
+  height: 70%;
+  background-color: rgb(229, 247, 247);
+  /* display: none; */
+  align-items: center;
+  margin: auto;
+  text-align: center;
 }
+.container-lose img{  
+  width: 80%;
+  /* height: 100%; */
+}
+.container-lose h2{
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.8em 1em 0;
+  color: inherit;
+  font-size: 1.875em;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+  word-wrap: break-word;
+
+}
+
 .container-cards{ 
   width: 100%;
  
