@@ -1,25 +1,32 @@
 
-<section class="section-play">
-
-  <button class="section-play-button" (click)="startGame()" #buttonGame> JUGAR </button>
-  <div class="container-audio" #containerAudio >
-    <!-- <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
-    </audio> -->
-    <h2>time: {{minutos}} : {{segundos}}</h2>
-    <button (click)="playAudio()">
-      <img src="../../../assets/icono_audio.png">
-    </button>
+<div class="containerPokeMemoryGral">
+  <div class="button-jugar">
+    <button (click)="hiddenCardPokemon()" [ngStyle]="isPlayMemory ? {'display': 'none'} : {'display': 'block'}">JUGAR</button>
   </div>
 
-  <div class="container-cards" #containerCards >
-    <div class="card-pokemon1" *ngFor="let card of pokeData;let i = index">
-        <img src ="{{card.image}}">
-        <h2>{{card.id}}</h2>
-        <button class="card-pokemon2" (click)="hiddenCard($event,card.id)"  [disabled]= "isDisabled">
-          <!-- <button (click)="hiddenImg($event, card.id)" [disabled]= "isDisabled"></button> -->
-        </button>
-    </div>
+  <div class="containerPlayGame"  [ngStyle]="isPlayMemory ? {'display': 'grid'} : {'display': 'none'}">
+      <div class="container-audio">
+          <!-- <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
+          </audio> -->
+          <div class="container-lose" [ngStyle]="minutos ===0 && segundos ? {'color': 'red'} : {'color': 'yellow'}">
+            <p>PERDISTE!  </p>
+          </div>
+          <h2>time: {{minutos}} : {{segundos}}</h2>
+          <button (click)="playAudio()">
+            <img src="../../../assets/icono_audio.png">
+          </button>
+      </div>
+      <div class="container-cards" >
+        <div class="card-pokemon1" *ngFor="let card of pokeData;let i = index">
+          <img src ="{{card.image}}">
+          <h2>{{card.id}}</h2>
+          <input  type="image" src="../../../assets/poke.jpg" class="card-pokemon2" (click)="hiddenCard($event,card.id)"  [disabled]= "isDisabled">
+
+      </div>
+      </div>
+
   </div>
-</section>
+</div>
+<app-footer></app-footer>
 
 

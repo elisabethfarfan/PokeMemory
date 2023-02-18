@@ -1,24 +1,36 @@
-.section-play{
-  height: 87.8vh;
+.containerPokeMemoryGral{
+  background-image: url('../../../assets/fondo2.png');
+  position: relative;
+}
+.button-jugar{
   width: 100%;
-  background-image: url("../../../assets/fondo_pokememory.png");
-  background-size:  100% 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* position: relative; */
 }
-
-.section-play-button{
-  font-family: 'Josefin Sans', sans-serif;
+.button-jugar button{
+  width: 30%;
+  height: 100px;
   background-color: #3B3486;
-  color: var(--blanco);
-  border: none ;
-  border-radius: 5px;
-  width: 15%;
-  height: 10%;
-  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 5px #161616;
+  border: none;
+  font-size: 80px;
+  color: #F0EEED;
+  text-shadow: 3px 3px 7px #161616;
   cursor: pointer;
+  margin-bottom: 50px;
+
+
+}
+.containerPlayGame{
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: absolute;
+
 }
 .container-audio{
   display: none;
@@ -28,14 +40,15 @@
   height: 75px;
   width: 100%;
   display: flex;
-  justify-content:space-between;
+  justify-content:center;
   align-items: center;
-  padding:  0 20px;
-  margin-bottom: 30px;
+}
+.container-audio h2{
+  padding:  0 15px ;
 }
 
 .container-audio button{
-  height: 75%;
+  height: 60%;
   width: 3.5%;
   border-radius: 100px;
   margin-right: 60px;
@@ -49,15 +62,25 @@
   height: 120%;
   width: 120%;
 }
+.container-lose{
+  width: 30%;
+  height: 100px;
+  background-color: aqua;
+}
 .container-cards{
+  width: 100%;
 
+  /* flex-direction: column; */
   display:grid;
   grid-template-columns: repeat(6, 0.2fr);
+  /* grid-row: 2; */
+
+  cursor: pointer;
   grid-gap: 10px;
-  padding: 30px 50px;
+  padding: 0 50px;
   justify-content: center;
   align-content: center;
-  display: none;
+
 }
 .card-pokemon1{
   background-color:  #F0EEED;
@@ -82,9 +105,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../../../assets/poke.jpg");
-  object-fit: none;
-  background-repeat: no-repeat;
   height:100%;
   width:100%;
   border-radius: 10px;
@@ -94,7 +114,6 @@
   border: 2px solid violet;
 }
 .card-pokemon2 button{
-  /* background-image: url("../../../assets/poke.jpg"); */
   width: 40%;
   height: 50%;
 }

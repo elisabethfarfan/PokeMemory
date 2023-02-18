@@ -1,1 +1,19 @@
-<p>pokedex works!</p>
+
+<div class="containerCards">   
+    <div class="pokemon-group"  *ngFor="let pokemon of pokemons" (click)="getInfoPokemon()">
+        <div class="poke-img">
+          <p class="poke-num">{{pokemon.id}}</p>
+          <img src={{pokemon.img}} >
+        </div>
+        <div class="container-info">
+         <p class="poke-name">{{pokemon.name}}</p>
+         <div class="poke-hability">
+          <h4>Abilities</h4>
+          <div class="poke-abilities"  *ngFor="let ability of pokemon.abilities">
+            <p>{{ability}}</p>            
+          </div>
+         </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

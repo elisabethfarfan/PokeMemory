@@ -3,10 +3,9 @@ import axios from 'axios';
 import { from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-// interface Poke {
-//   name: string,
-//   url:string
-// }
+import { PokedexService } from './pokedex.service';
+import { Pokedex } from './pokedexInterface';
+
 
 @Component({
   selector: 'app-pokedex',
@@ -17,45 +16,30 @@ import { map } from 'rxjs/operators';
 
 export class PokedexComponent {
 
-  pokemon: Array<any> = [];
-  // pokemon:Poke[] = []
-
-  constructor(){
-    this.getPokemon();
-  }
-  poke = from(this.pokemon);
-
-  getPokemon(){
-    // const pokemon: Array<any> =[];
-
-    const apiPokemons = "https://pokeapi.co/api/v2/pokemon/";
-
-     // capturar nombre del pokemon
-    axios.get(apiPokemons)
-    .then((res:any)=>{
-      this.pokemon.push(res.data.results);
-    });
-
-    console.log(this.poke);
+ public pokemons: Pokedex[] =[];
 
 
+ constructor(public pokemonServicio:PokedexService){}
 
-    this.poke.pipe(map(pok => {return pok.url}))
-    .subscribe(res => {console.log(res)});
+  ngOnInit(){
 
-
-    //modificar el url final a la propiedad pokemon
-    // console.log(pokemon);
-    // const arrayPokemon = this.pokemon.map((e)=> {
-    // return e.name + "hola";
-    //       //  axios.get(e.url)
-    //   //  .then((u)=>{
-    //   //    console.log(u);
-    //   //  })
-    // });
-
-
+      for (let index = 1; index <= 30; index++) {
+        this.pokemonServicio.getPokemons(index).subscribe((res)=> { 
+                this.pokemons = [...this.pokemons, 
+                  {
+                  id: '00'+ res.id,
+                  name: res.name,
+                  img:res.sprites.front_default,
+                  abilities: res.abilities.map((elemen:any) => elemen.ability.name),          
+                  }            
+                ]    
+        })
+      }
   }
 
+ public getInfoPokemon(){
+  console.log('infor dle pokemon');
+ }
+ 
 
 }

@@ -10,6 +10,9 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { HomeComponent } from './components/home/home.component';
 import { PokememoryComponent } from './components/pokememory/pokememory.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PokedexService } from './components/pokedex/pokedex.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ModalPokedexComponent } from './components/pokedex/modal-pokedex/modal-pokedex.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,17 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     PokememoryComponent,
     FooterComponent,
+    ModalPokedexComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    PokedexService,
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

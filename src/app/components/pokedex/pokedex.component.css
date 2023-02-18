@@ -1,0 +1,82 @@
+.containerCards{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    background-image: url("../../../assets/fondo2.png");
+    overflow-y: scroll;
+}
+.pokemon-group{
+    box-shadow: 0 0 9px 0 #242323;
+    background-color: #fcfcf9;
+    padding: 1em;
+    margin: 2em;
+    border-radius: 0.4em;
+    max-width: 300px;
+    min-width: 270px;
+    display: grid;
+    grid-template-columns: 53% 47%;
+    flex-basis: 30%;
+    cursor: pointer;
+    
+}
+.container-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #afcaca;
+    border-radius: 7px;
+    box-shadow: 0 0 9prgb(56, 56, 56) #242323;
+   flex-direction: column;
+   text-align: center;
+}
+.poke-name {
+    width: 100%;
+    height: 30px;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #35867d;
+    border-radius: 0.3em;
+    color: white;
+    /* margin: 0.5em; */
+    margin-top: 0;
+    padding: .2em;
+}
+.poke-img {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+  
+}
+.poke-img img{
+    width: 100%; 
+    text-align: center;
+    padding: 0;
+    background-size:cover;
+    background-position: center;
+    
+}
+
+.poke-num{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.poke-hability{
+    width: 100%;
+    height: 70%;
+    /* background-color: red; */
+    text-align: center;
+    font-size: 1.2em;
+    padding: .5em ;
+    text-align: justify;
+}
+.poke-abilities{
+    width: 100%;
+    flex-wrap: wrap; 
+    /* background-color: green; */
+    padding: .2em ;
+    font-size: 15px;
+}
