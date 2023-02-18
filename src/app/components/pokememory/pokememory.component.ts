@@ -17,7 +17,7 @@ interface pokemon {
 
 export class PokememoryComponent {
 
-  
+
   pokeData : pokemon[] = cardsjson.items;
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
@@ -105,7 +105,7 @@ export class PokememoryComponent {
   // metodo para mostrar el card de memorypoke y ejecutar el timer y play
   public hiddenCardPokemon(){
     this.isPlayMemory = true;
-    setInterval(() => this.timer(), 1000);  
+    setInterval(() => this.timer(), 1000);
     // this.playAudio();
   }
 
@@ -113,10 +113,11 @@ export class PokememoryComponent {
 
 
   constructor( private renderer2 : Renderer2 ){
+    console.log("hola");
     // duplicar las cartas
     this.pokeData = [...this.pokeData,...this.pokeData];
     //metodo que barajea aleatoriamente las cartas
-    this.pokeData.sort( function(){ return Math.random() - 0.5});   
+    this.pokeData.sort( function(){ return Math.random() - 0.5});
   }
- 
+
 }

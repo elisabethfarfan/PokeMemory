@@ -1,6 +1,9 @@
 .containerPokeMemoryGral{
   background-image: url('../../../assets/fondo2.png');
+  background-size: 100%;
   position: relative;
+  overflow: hidden;
+  height: calc(100vh - 12.17vh);
 }
 .button-jugar{
   width: 100%;
@@ -35,7 +38,10 @@
   margin:  auto ;
 }
 .container-audio{
-  /* background-color: aqua; */
+  display: none;
+}
+
+.show-container-audio{
   height: 75px;
   width: 100%;
   display: flex;
@@ -45,6 +51,7 @@
 .container-audio h2{
   padding:  0 15px ;
 }
+
 .container-audio button{
   height: 60%;
   width: 3.5%;
@@ -54,7 +61,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  cursor: pointer;;
+  cursor: pointer;
 }
 .container-audio button img{
   height: 120%;
@@ -72,38 +79,20 @@
   margin: auto;
   text-align: center;
 }
-.container-lose img{  
-  width: 80%;
-  /* height: 100%; */
-}
-.container-lose h2{
-  position: relative;
-  max-width: 100%;
-  margin: 0;
-  padding: 0.8em 1em 0;
-  color: inherit;
-  font-size: 1.875em;
-  font-weight: 600;
-  text-align: center;
-  text-transform: none;
-  word-wrap: break-word;
-
-}
-
-.container-cards{ 
+.container-cards{
   width: 100%;
- 
+
   /* flex-direction: column; */
   display:grid;
   grid-template-columns: repeat(6, 0.2fr);
   /* grid-row: 2; */
-  
+
   cursor: pointer;
   grid-gap: 10px;
   padding: 0 50px;
   justify-content: center;
   align-content: center;
-  
+
 }
 .card-pokemon1{
   background-color:  #F0EEED;
@@ -113,7 +102,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border: 1px solid black; */
   width: 80%;
   height: 100%;
   border-radius: 10px;
@@ -141,13 +129,27 @@
   width: 40%;
   height: 50%;
 }
-.card-pokemon2-oculto{
+.card-pokemon2-oculto, .container-audio-button{
   display: none;
 }
 .card-pokemon2-mostrar{
   display: block;
 }
+.show-container-cards{
+  display: flex;
+  display:grid;
+  grid-template-columns: repeat(6, 0.2fr);
+  grid-gap: 10px;
+  padding: 30px 50px;
+  justify-content: center;
+  align-content: center;
+
+}
 
 .card-pokemon:hover{
   border: 1.5px solid blueviolet;
 }
+
+/* .container-play{
+  background-color:#3B3486;
+} */

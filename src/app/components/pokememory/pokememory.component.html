@@ -5,24 +5,8 @@
   <div class="button-jugar">
     <button (click)="hiddenCardPokemon()" [ngStyle]="isPlayMemory ? {'display': 'none'} : {'display': 'block'}">JUGAR</button>
   </div>
-  
-  <div class="containerPlayGame"   [ngStyle]="isPlayMemory ? {'display': 'grid'} : {'display': 'none'}">
-    <!-- <div class="container-lose" [ngStyle]="minutos ===0 && segundos===0 ? {'display': 'block'} : {'display': 'block'}">
-      
-      <img src="../../../assets/loosePikachu.png">
-      <h2>¡PERDISTE!  Volvamos a intentarlo </h2>
 
-    </div> -->
-
-    <swal [ngStyle]="minutos ===0 && segundos===0 ? {'display': 'block'} : {'display': 'none'}"
-    #deleteSwal
-    title="Delete?"
-    text="This cannot be undone"
-    icon="question"
-    [showCancelButton]="true"
-    [focusCancel]="true"
-     >
-  </swal>
+  <div class="containerPlayGame"  [ngStyle]="isPlayMemory ? {'display': 'grid'} : {'display': 'none'}">
       <div class="container-audio">
           <!-- <audio controls src='../../../assets/musica_fondo.mp3' type="audio/mp3">
           </audio> -->
@@ -39,10 +23,10 @@
           <img src ="{{card.image}}">
           <h2>{{card.id}}</h2>
           <input  type="image" src="../../../assets/poke.jpg" class="card-pokemon2" (click)="hiddenCard($event,card.id)"  [disabled]= "isDisabled">
-        
+
       </div>
       </div>
-      
+
   </div>
 </div>
 <!-- <app-footer></app-footer> -->
