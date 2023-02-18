@@ -24,15 +24,15 @@ export class PokedexComponent {
   ngOnInit(){
 
       for (let index = 1; index <= 30; index++) {
-        this.pokemonServicio.getPokemons(index).subscribe((res)=> { 
-                this.pokemons = [...this.pokemons, 
+        this.pokemonServicio.getPokemons(index).subscribe((res)=> {
+                this.pokemons = [...this.pokemons,
                   {
                   id: '00'+ res.id,
                   name: res.name,
                   img:res.sprites.front_default,
-                  abilities: res.abilities.map((elemen:any) => elemen.ability.name),          
-                  }            
-                ]    
+                  abilities: res.abilities.map((elemen:any) => elemen.ability.name),
+                  }
+                ]
         })
       }
   }
@@ -40,6 +40,6 @@ export class PokedexComponent {
  public getInfoPokemon(){
   console.log('infor dle pokemon');
  }
- 
+
 
 }
