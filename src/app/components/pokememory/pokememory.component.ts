@@ -20,13 +20,27 @@ export class PokememoryComponent {
   arrayPokemonSelect: string[] = [];
   arrayDivsCard : any[] = [];
   isDisabled: boolean = false;
+
   //cuenta click de icono audio
   contClickAudio: number = 0;
   audio:any = new Audio('../../../assets/musica_fondo.mp3');
 
   //timer
-  minutos :number = 2;
-  segundos: number = 59;
+  minutos :number = 1;
+  segundos: number = 0;
+
+  executeInterval !: any;
+
+  @ViewChild('containerAudio') containerAudi!: ElementRef;
+  @ViewChild('buttonGame') buttonGam !: ElementRef;
+  @ViewChild('containerCards') containerCards !: ElementRef;
+
+  startGame(){
+    console.log(this.containerAudi.nativeElement);
+    this.renderer2.addClass(this.buttonGam.nativeElement,"container-audio-button");
+    this.renderer2.addClass(this.containerAudi.nativeElement,"show-container-audio");
+    this.renderer2.addClass(this.containerCards.nativeElement,"show-container-cards");
+  }
 
 
   playAudio(){
@@ -101,21 +115,24 @@ export class PokememoryComponent {
   }
 
   timer(){
-     if(--this.segundos < 0){
+
+    if(this.segundos-- === 0){
       this.segundos = 59;
 
-      if(--this.minutos < 0){
-        this.minutos=2;
-        this.segundos=59;
+      if(this.minutos-- === 0){
+        this.minutos=1;
+        this.segundos=0;
 
+        //finaliza el timer
+        clearInterval( this.executeInterval)
       }
-
 
      }
 
   }
 
   constructor( private renderer2 : Renderer2 ){
+    console.log("hola");
     // duplicar las cartas
     this.pokeData = [...this.pokeData,...this.pokeData];
 
@@ -123,7 +140,7 @@ export class PokememoryComponent {
     this.pokeData.sort( function(){ return Math.random() - 0.5});
 
     //ejecutar el timer
-    setInterval(() => this.timer(), 1000);
+    // this.executeInterval = setInterval(() => this.timer(), 1000);
   }
 
 }
