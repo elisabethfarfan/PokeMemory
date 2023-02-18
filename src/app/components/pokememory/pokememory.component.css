@@ -1,6 +1,9 @@
 .containerPokeMemoryGral{
   background-image: url('../../../assets/fondo2.png');
+  background-size: 100%;
   position: relative;
+  overflow: hidden;
+  height: calc(100vh - 12.17vh);
 }
 .button-jugar{
   width: 100%;
