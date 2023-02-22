@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class PokedexService {
 
   private API_POKEMON = "https://pokeapi.co/api/v2/pokemon/";
-
+  
+  // objeto Observable
+  $modalPokedex = new EventEmitter<any>();
 
   constructor(public http:HttpClient) { }
 

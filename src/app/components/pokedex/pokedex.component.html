@@ -1,6 +1,6 @@
 
 <div class="containerCards">   
-    <div class="pokemon-group"  *ngFor="let pokemon of pokemons" (click)="getInfoPokemon()">
+    <div class="pokemon-group" *ngFor="let pokemon of pokemons; let i = index" (click)="openModal(i)">      
         <div class="poke-img">
           <p class="poke-num">{{pokemon.id}}</p>
           <img src={{pokemon.img}} >
@@ -15,5 +15,11 @@
          </div>
         </div>
     </div>
+
+
+    <div class=""  *ngIf="modalSwitch">
+      <app-modal-pokedex></app-modal-pokedex>
+    </div>
+    
 </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

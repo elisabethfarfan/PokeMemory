@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import axios from 'axios';
 import { from, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,12 +16,21 @@ import { Pokedex } from './pokedexInterface';
 
 export class PokedexComponent {
 
+
+
  public pokemons: Pokedex[] =[];
+  modalSwitch!: boolean;
 
 
- constructor(public pokemonServicio:PokedexService){}
+
+ constructor(public pokemonServicio:PokedexService, private modalServicio :PokedexService){}
 
   ngOnInit(){
+    this.modalServicio.$modalPokedex.subscribe(res => {
+      this.modalSwitch = res;
+      console.log(this.modalSwitch);
+      
+    })
 
       for (let index = 1; index <= 30; index++) {
         this.pokemonServicio.getPokemons(index).subscribe((res)=> {
@@ -29,16 +38,22 @@ export class PokedexComponent {
                   {
                   id: '00'+ res.id,
                   name: res.name,
-                  img:res.sprites.front_default,
+                  img: res.sprites.front_default,
                   abilities: res.abilities.map((elemen:any) => elemen.ability.name),
                   }
                 ]
         })
       }
+
+      // asiganmos el nuevo valor de this.modalSwitch dependiendo de si abre o cierra
+    
   }
 
- public getInfoPokemon(){
-  console.log('infor dle pokemon');
+ public openModal(index:number){
+  this.modalSwitch = true;
+  let idPokemon = index;
+  console.log('abriendo modal', this.modalSwitch, index);
+  
  }
 
 

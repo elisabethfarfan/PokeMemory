@@ -1,0 +1,9 @@
+.modal-pokedex{
+    background-color: blueviolet;
+    width: 40%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 25% 30%;
+}
