@@ -1,6 +1,8 @@
 <div class="modal-pokedex">
-    <div class="" >
-        <figure>Imagen del pokemon</figure>     
+    <div class="" *ngFor="let pokemon of infoPokemon">
+        <figure>
+            <img [src]="pokemon.img">
+        </figure>     
         <div class="modal-body">
             <p>description</p>
             <div>

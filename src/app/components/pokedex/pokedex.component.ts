@@ -17,19 +17,37 @@ import { Pokedex } from './pokedexInterface';
 export class PokedexComponent {
 
 
-
  public pokemons: Pokedex[] =[];
   modalSwitch!: boolean;
-
-
+  pokemonSelect:Pokedex[]=[{
+    id: '',
+    name:'',
+    img: '',
+    abilities:'',
+    // generation: Object ;
+    // about: string ;
+    // size: Object ;
+    // pokemonRarity: string ;
+    // type: Array<String> ;
+    // encounter: Object ;
+    // spawnChance: string;
+    // stats: Object ;
+    // resistant: Array<String> ;
+    // weaknesses: Array<String> ;
+    // quickMove: Array<Object>  ;
+    // specialAttack: Array<Object> ;
+    // buddyDistanceKm: string;
+    // evolution: Object;
+  
+    }
+];;
 
  constructor(public pokemonServicio:PokedexService, private modalServicio :PokedexService){}
 
   ngOnInit(){
     this.modalServicio.$modalPokedex.subscribe(res => {
       this.modalSwitch = res;
-      console.log(this.modalSwitch);
-      
+   
     })
 
       for (let index = 1; index <= 30; index++) {
@@ -45,14 +63,28 @@ export class PokedexComponent {
         })
       }
 
+
       // asiganmos el nuevo valor de this.modalSwitch dependiendo de si abre o cierra
     
   }
 
- public openModal(index:number){
+ public openModal(index:string) {
   this.modalSwitch = true;
-  let idPokemon = index;
-  console.log('abriendo modal', this.modalSwitch, index);
+  let idPokemon = parseInt(index);
+  this.modalServicio.getPokemons(idPokemon).subscribe(res =>{
+      this.pokemonSelect = [
+        {
+        id: '00'+ res.id,
+        name: res.name,
+        img: res.sprites.front_default,
+        abilities: res.abilities.map((elemen:any) => elemen.ability.name),
+        }
+      ]
+  console.log('abriendo modal padre', this.pokemonSelect);
+
+
+})
+  
   
  }
 
