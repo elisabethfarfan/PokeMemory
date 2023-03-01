@@ -1,11 +1,15 @@
 
 <div class="containerCards">   
     <div class="pokemon-group"  *ngFor="let pokemon of pokemons; let i = index" (click)="openModal(pokemon.id)">      
-        <div class="poke-img">
+        <div class="poke-info">
           <p class="poke-num">{{pokemon.id}}</p>
-          <img src={{pokemon.img}} >
+          
+          <div class="img-circle">
+            <img src={{pokemon.img}} >
+          </div>
+          <p class="poke-name">{{pokemon.name}}</p>
         </div>
-        <div class="container-info">
+        <!-- <div class="container-info">
          <p class="poke-name">{{pokemon.name}}</p>
          <div class="poke-hability">
           <h4>Abilities</h4>
@@ -13,8 +17,8 @@
             <p>{{ability}}</p>            
           </div>
          </div>
-        </div>
-    </div>
+        </div> -->
+     </div>
 
 
     <div class="" name="" ngDefaultControl  *ngIf="modalSwitch" [(ngModel)]="pokemonSelect">

@@ -52,6 +52,8 @@ export class PokedexComponent {
 
       for (let index = 1; index <= 30; index++) {
         this.pokemonServicio.getPokemons(index).subscribe((res)=> {
+          console.log(res);
+          
                 this.pokemons = [...this.pokemons,
                   {
                   id: '00'+ res.id,
@@ -80,9 +82,6 @@ export class PokedexComponent {
         abilities: res.abilities.map((elemen:any) => elemen.ability.name),
         }
       ]
-  console.log('abriendo modal padre', this.pokemonSelect);
-
-
 })
   
   
