@@ -1,5 +1,5 @@
 
-<div class="containerCards">   
+<div class="containerCards">
     <div class="pokemon-group"  *ngFor="let pokemon of pokemons; let i = index" (click)="openModal(pokemon.id)">      
         <div class="poke-info">
           <p class="poke-num">{{pokemon.id}}</p>

@@ -1,3 +1,4 @@
+
 .containerCards{
     width: 100%;
     height: calc(100vh - 12.17vh);
@@ -13,7 +14,7 @@
     width: 150px;
     height: 180px;
     box-shadow: 0 0 9px 0 #242323;
-    background-color: #2596be;
+    background-color: #353f75;
     /* padding: .5em; */
     margin: 2em 3em;
     border-radius: 0.4em;    
@@ -58,7 +59,7 @@
     width: 100px;
     height: 100px;
     margin: .7em;
-    background-color:#eeda74 ;
+    background-color:#b8b3b3 ;
     border-radius: 50%;
     box-shadow: 0 0 12px 0 #242323;
     padding: .3em ;

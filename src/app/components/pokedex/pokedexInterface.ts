@@ -5,7 +5,7 @@ export interface Pokedex {
     abilities:string;
     Height:string;
     weight:string;
-    Types:string;
+    Types:[];
     // generation: Object ;
     // about: string ;
     // size: Object ;

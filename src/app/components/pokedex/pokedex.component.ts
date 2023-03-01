@@ -26,7 +26,7 @@ export class PokedexComponent {
     abilities:'',
     Height:"",
     weight:"string",
-    Types:"string",
+    Types:[],
     // generation: Object ;
     // about: string ;
     // size: Object ;
@@ -64,7 +64,7 @@ export class PokedexComponent {
                   abilities: "",
                   Height:"",
                   weight:"",
-                  Types:"",
+                  Types:[],
                   }
                 ]
         })
