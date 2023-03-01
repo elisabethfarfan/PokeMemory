@@ -9,19 +9,11 @@
           </div>
           <p class="poke-name">{{pokemon.name}}</p>
         </div>
-        <!-- <div class="container-info">
-         <p class="poke-name">{{pokemon.name}}</p>
-         <div class="poke-hability">
-          <h4>Abilities</h4>
-          <div class="poke-abilities"  *ngFor="let ability of pokemon.abilities">
-            <p>{{ability}}</p>            
-          </div>
-         </div>
-        </div> -->
+       
      </div>
 
 
-    <div class="" name="" ngDefaultControl  *ngIf="modalSwitch" [(ngModel)]="pokemonSelect">
+    <div class="modal-pokemon" name="" ngDefaultControl  *ngIf="modalSwitch" [(ngModel)]="pokemonSelect">
       <app-modal-pokedex [infoPokemon]="pokemonSelect"></app-modal-pokedex>
     </div>
     

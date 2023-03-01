@@ -1,22 +1,32 @@
 <div class="modal-pokedex">
-    <div class="" *ngFor="let pokemon of infoPokemon">
+    <div class="moda-info" *ngFor="let pokemon of infoPokemon">
         <figure>
             <img [src]="pokemon.img">
         </figure>     
         <div class="modal-body">
-            <p>description</p>
-            <div>
-                <p>caracteristicas del pokemon</p>
+            <div class="modal-body-info">
+                <h4>description</h4>
+                <div>
+                    <p>caracteristicas del pokemon</p>
+                </div>
+                <div>
+                    <h4>Quick move</h4>
+                </div>
+                <div>
+                    <p>especial attack</p>
+                    <div class="container-info">
+                        <p class="poke-name">{{pokemon.name}}</p>
+                        <div class="poke-hability">
+                            <h4>Abilities</h4>
+                            <div class="poke-abilities"  *ngFor="let ability of pokemon.abilities">
+                                <p>{{ability}}</p>            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button-modal-close" (click)="closeModal()">X</button>
             </div>
-            <div>
-                <p>Quick move</p>
-            </div>
-            <div>
-                <p>especial attack</p>
-            </div>
-            <button (click)="closeModal()">Cerrar</button>
+           
         </div>
-    </div>
-    
-  
+    </div>     
 </div>
