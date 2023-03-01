@@ -24,6 +24,9 @@ export class PokedexComponent {
     name:'',
     img: '',
     abilities:'',
+    Height:"",
+    weight:"string",
+    Types:"string",
     // generation: Object ;
     // about: string ;
     // size: Object ;
@@ -52,14 +55,16 @@ export class PokedexComponent {
 
       for (let index = 1; index <= 30; index++) {
         this.pokemonServicio.getPokemons(index).subscribe((res)=> {
-          console.log(res);
           
                 this.pokemons = [...this.pokemons,
                   {
                   id: '00'+ res.id,
                   name: res.name,
                   img: res.sprites.front_default,
-                  abilities: res.abilities.map((elemen:any) => elemen.ability.name),
+                  abilities: "",
+                  Height:"",
+                  weight:"",
+                  Types:"",
                   }
                 ]
         })
@@ -74,12 +79,18 @@ export class PokedexComponent {
   this.modalSwitch = true;
   let idPokemon = parseInt(index);
   this.modalServicio.getPokemons(idPokemon).subscribe(res =>{
+    console.log(res.height, res.weight);
+    
+
       this.pokemonSelect = [
         {
         id: '00'+ res.id,
         name: res.name,
         img: res.sprites.front_default,
         abilities: res.abilities.map((elemen:any) => elemen.ability.name),
+        Height:res.height,
+        weight:res.weight,
+        Types:res.types.map((elemen:any)=> elemen.type.name),
         }
       ]
 })

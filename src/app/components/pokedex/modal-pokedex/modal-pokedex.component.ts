@@ -14,6 +14,9 @@ export class ModalPokedexComponent {
     name:'',
     img: '',
     abilities:'',
+    Height:"",
+    weight:"string",
+    Types:"string",
     // generation: Object ;
     // about: string ;
     // size: Object ;

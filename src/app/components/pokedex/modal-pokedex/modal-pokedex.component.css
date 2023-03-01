@@ -1,7 +1,7 @@
 .modal-pokedex{
     background-color: rgb(255, 255, 255);
     width: 300px;
-    height: 300px;
+    height: 250px;
     position: absolute;
     top: 20%;
     left: 30%;
@@ -36,17 +36,63 @@ figure{
     background-color: cadetblue;
     width: 100%;
     height: 70%;
-    padding: .5em;
+    /* padding: .5em; */
     margin-top: 60px;
     margin-bottom: 0;
  
 }
 .modal-body-info{
     margin-top: 50px;
-    background-color: red;
+    /* background-color: red; */
     height: 70%;
+    /* display: flex;
+    flex-direction: column; */
+
+}
+.modal-body-name{
+    text-align: center;
+    padding: .5em;
+    text-transform: capitalize;
 }
 
+.modal-body-dates{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: cadetblue;
+    border-radius: 0 0px 8px 8px;
+    
+}
+
+.body-dates{
+    width: 33.33%;
+    margin-right: .2em;
+    text-align: center;
+    /* padding: .5em; */
+    border-radius: 0 8px 8px 8px ;
+    height: 100%;
+}
+
+.modal-body-dates h4{
+    background-color: #a2db96;
+    padding: 0.5em;
+    width: 100%;
+}
+
+.poke-abilities{
+    background-color: #ffffff;
+    /* height: 100%; */
+    padding: 0.2em;
+}
+.date-types{
+    margin-right: 0;
+
+}
+
+p{
+    height: 23.5px;
+    background-color: #ffffff;
+}
 .button-modal-close{
     width: 35px;
     height: 35px;

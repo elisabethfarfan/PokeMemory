@@ -4,29 +4,39 @@
             <img [src]="pokemon.img">
         </figure>     
         <div class="modal-body">
-            <div class="modal-body-info">
-                <h4>description</h4>
-                <div>
-                    <p>caracteristicas del pokemon</p>
-                </div>
-                <div>
-                    <h4>Quick move</h4>
-                </div>
-                <div>
-                    <p>especial attack</p>
-                    <div class="container-info">
-                        <p class="poke-name">{{pokemon.name}}</p>
-                        <div class="poke-hability">
+            <div class="modal-body-info">               
+                    <h4 class="modal-body-name">{{pokemon.name}} - {{pokemon.id}}</h4>
+                    <div class="modal-body-dates">
+                        <div class=" body-dates poke-hability">
                             <h4>Abilities</h4>
                             <div class="poke-abilities"  *ngFor="let ability of pokemon.abilities">
                                 <p>{{ability}}</p>            
                             </div>
                         </div>
+                        <div class="body-dates">
+                            <div class="">
+                                <h4>Height</h4>
+                                <p>{{pokemon.Height}}</p>
+                            </div>
+                            <div>
+                                <h4>weight </h4> 
+                                <p>{{pokemon.weight}}</p>
+                            </div>
+                        </div>
+                        <div class="body-dates date-types"  >                     
+                            <!-- <h4>Types</h4>
+                            <p>{{pokemon.Types}}</p>  -->
+                            <h4>Abilities</h4>
+                            <div class="poke-abilities"  *ngFor="let type of pokemon.Types">
+                                <p>{{type}}</p>            
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <button class="button-modal-close" (click)="closeModal()">X</button>
-            </div>
-           
+                    
+                    
+            </div> 
+            <button class="button-modal-close" (click)="closeModal()">X</button>          
         </div>
     </div>     
 </div>
