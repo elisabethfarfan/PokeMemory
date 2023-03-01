@@ -18,6 +18,8 @@
   padding: 20px;
 }
 .box-info h2{
+  color: aliceblue;
+  padding-bottom: 1em;
 }
 .card-pokemon{
   display: flex;
@@ -30,6 +32,9 @@
 .card-pokemon div {
   width: 50%;
 
+}
+.info-poke{
+  padding: 1em;
 }
 
 .image-paralelogramo1{
